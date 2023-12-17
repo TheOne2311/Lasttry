@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using 
+using UnityEngine.SceneManagement;
 
 
 public class MainMenuManage : MonoBehaviour
@@ -12,6 +12,7 @@ public class MainMenuManage : MonoBehaviour
     [SerializeField] Button Setting;
     [SerializeField] Button Quit;
     [SerializeField] Button Blank;
+    public int sceneid;
 
     public void Start()
     {
@@ -36,9 +37,9 @@ public class MainMenuManage : MonoBehaviour
         foreach (Button button in FindObjectsOfType<Button>(true))
         {
             button.gameObject.AddComponent<AnimateButton>();
+            Quit.onClick.AddListener(Exitgame);
+            Play.onClick.AddListener(ChangetoPlay);
         }
-        Quit.onClick.AddListener(Exitgame);
-        Play.onClick.AddListener(ChangetoPlay);
     }
 
     void Exitgame()
@@ -47,6 +48,6 @@ public class MainMenuManage : MonoBehaviour
     }
     void ChangetoPlay()
     {
-        CustomSceneManager.Instance().OpenMap1Scene();
+        SceneManager.LoadScene(sceneid);
     }
 }

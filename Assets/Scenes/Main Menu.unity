@@ -676,12 +676,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 900754821}
+    - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977957904303049464, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961187780802680744, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7961187780802680744, guid: 44b4f283f7f6f1a40bee7a15c21cc086, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
