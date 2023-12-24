@@ -38,4 +38,15 @@ public class HMValue : MonoBehaviour
         Healthbar.fillAmount = Healthamount / 100f;
     }
         */
+    public enum type : int
+    {
+        Health,
+        Mana,
+        ATK,
+        Def,
+        Money,
+        Crit
+
+
+    }
 }
