@@ -1,37 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed;
-    private bool isMoving;
-    private Vector2 input;
+    public float speed = 3.0F;
+    private Vector3 moveDirection = Vector3.zero;
+
     void Update()
     {
-        if (!isMoving )
-        {
-            input.x = Input.GetAxis("Horizontal");
-            input.y = Input.GetAxis("Vertical");
-            if (input != Vector2.zero)
-            {
-                var targetPos = transform.position;
-                targetPos.x = input.x;
-                targetPos.y = input.y;
-                StartCoroutine(Move(targetPos));
-            }
-        }
-    }
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-    IEnumerator Move(Vector3 targetPos)
-    {
-        isMoving = true;
-        while ((targetPos-transform.position).sqrMagnitude > Mathf.Epsilon)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed *Time.deltaTime);
-            yield return null;
-        }
-        transform.position = targetPos;
-        isMoving = false;
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
+
+        transform.position = transform.position + movement * speed * Time.deltaTime;
     }
 }
