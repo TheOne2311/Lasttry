@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 3.0F;
     float moveHorizontal, moveVertical;
     public Animator Anim;
-
+    public GameObject Camera;
+    private Vector3 movement;
     public void Update()
     {
         moveHorizontal = Input.GetAxis("Horizontal");
@@ -25,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("The Vertical is" + moveVertical);
         }
         
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
+        movement = new Vector3(moveHorizontal, moveVertical, 0);
         Player_Move(movement);
-
-        transform.position = transform.position + movement * speed * Time.deltaTime;
+        Camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -3);
     }
-
-        void Player_Move(Vector3 movement)
+    void FixedUpdate()
+    {
+        this.transform.position +=  movement * speed * Time.deltaTime;
+    }
+    void Player_Move(Vector3 movement)
     {
         if (Anim != null)
         {
