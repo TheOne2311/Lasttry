@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Inventory 
 {
-    public class Item
-        {
-
+    public class Slot
+        { 
+        public int SlotNumb;
+        public int Max;
+        public CollectableType type;
         }
 }
