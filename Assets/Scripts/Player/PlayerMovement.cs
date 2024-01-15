@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movement;
     public void Update()
     {
+        //How The Player Move
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
         if (moveHorizontal <0)
@@ -19,21 +20,20 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        if (moveVertical != 0 || moveHorizontal != 0)
-        {
-            Debug.Log("The Horizontal is " + moveHorizontal);
-            Debug.Log("The Vertical is" + moveVertical);
-        }
         
         movement = new Vector3(moveHorizontal, moveVertical, 0);
         Player_Move(movement);
+        
+        // The Camera moves with player
         Camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -3);
     }
+    // Fixed Update for better collision with Rigidbody
     void FixedUpdate()
     {
         this.transform.position +=  movement * speed * Time.deltaTime;
     }
+
+    // How the is Player Animated
     void Player_Move(Vector3 movement)
     {
         if (Anim != null)
