@@ -8,6 +8,5 @@ public class Inventory
         { 
         public int SlotNumb;
         public int Max;
-        public CollectableType type;
         }
 }
