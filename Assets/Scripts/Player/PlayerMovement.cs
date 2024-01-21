@@ -3,10 +3,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 3.0F;
-    float moveHorizontal, moveVertical;
     public Animator Anim;
     public GameObject Camera;
+    public int inventorysize = 5;
+
+    private float moveHorizontal, moveVertical;
     private Vector3 movement;
+    [SerializeField] Inventory inventoryUI;
+
+    public void Start()
+    {
+        inventoryUI.InitializeInventory(inventorysize);
+    }
     public void Update()
     {
         //How The Player Move
@@ -26,6 +34,19 @@ public class PlayerMovement : MonoBehaviour
         
         // The Camera moves with player
         Camera.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -3);
+
+        //Inventory Toggle
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (inventoryUI.isActiveAndEnabled == false)
+            {
+                inventoryUI.Show();
+            }
+            else
+            {
+                inventoryUI.Hide();
+            }
+        }
     }
     // Fixed Update for better collision with Rigidbody
     void FixedUpdate()
@@ -50,4 +71,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }    
+
+
 }
